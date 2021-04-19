@@ -1,0 +1,24 @@
+## execute main_eoc.py -- to run for the meta file
+python main_eoc.py >> ./logs/log_<dataset_name>.txt
+## execute recursiv_edge_on_clique.py -- to run for particular delta, gamma value
+
+Set input for
+i)Partition_times
+ii) data_file
+iii) meta_file
+iv)partition_types
+v)correctness_check [optional] set true... if want to check, else false
+
+Execute get_T1.py -- to get the partition times
+set input for
+i) number_of_partitions (to decide how many update cycle will run)
+ii) partition_types = ['e', 'm']
+# 'e' ---> equally divide the whole lifecycle (each update cycle will have different number of links)
+# 'm' ---> each update cycle will have equal number of links
+
+#######  output  #####
+All the statistics related results will be collected in a pickle file in ./Results/
+format: Result_<dataset>_<delta>_<gamma>_<partitiontype>.pkl
+Contains:(2 dictionaries)
+i)total_cycle_stat
+ii)full_run_stat (when correctness is true)
